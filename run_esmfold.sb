@@ -1,0 +1,17 @@
+#!/bin/bash --login
+#SBATCH --job-name=esmfold2
+#SBATCH --gpus=a100:1
+#SBATCH --output=/mnt/scratch/
+#SBATCH --error=/mnt/scratch/
+#SBATCH --time=3:59:00
+#SBATCH --cpus-per-task=16
+#SBATCH --mem=64G
+
+module purge
+module load Miniforge3
+module load CUDA/12.9.1
+conda activate esmfold2
+export HF_HOME=/mnt/scratch/$USER/ef2/hf_cache
+cd /mnt/home/leroyale/AF3-HPC
+
+python3 /mnt/scratch/ppi_batch
