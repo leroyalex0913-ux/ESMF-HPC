@@ -32,7 +32,7 @@ NUM_DIFFUSION_SAMPLES = 1  # samples generated per seed
 NUM_LOOPS = 20
 NUM_SAMPLING_STEPS = 100
 
-BASE_OUTPUT_DIR = "/mnt/scratch/leroyale/ef2/outputs/test_fart"
+BASE_OUTPUT_DIR = "/mnt/scratch/"
 PPI_OUTPUT_DIR = os.path.join(BASE_OUTPUT_DIR, "ppi_predictions")
 PL_OUTPUT_DIR = os.path.join(BASE_OUTPUT_DIR, "ligand_predictions")
 os.makedirs(PPI_OUTPUT_DIR, exist_ok=True)
@@ -47,7 +47,7 @@ os.makedirs(PL_OUTPUT_DIR, exist_ok=True)
 
 import csv as _csv  # aliased to avoid clashing with the csv import used later
 
-CSV_PATH = "/mnt/home/leroyale/AF3-HPC/CSV_input_example.csv"  # update to your CSV path
+CSV_PATH = "/mnt/home/"  # update to your CSV path
 
 ENTRIES = []  # list of (interaction_id, type, seq_1, seq_2)
 with open(CSV_PATH, newline="") as f:
