@@ -7,9 +7,6 @@ Expected CSV columns:
         - type: "PPI" (sequence_2 = second protein sequence)
                 "PL"  (sequence_2 = ligand CCD code, e.g. "SAH", "RIT")
 
-Note: CCD codes are looked up against the Chemical Component Dictionary
-and are generally more reliable than SMILES-based ligand input.
-
 Runs each row through ESMFold2 across multiple seeds and diffusion
 samples, and saves predicted structures + confidence metrics.
 PPI and PL results are written to separate output subfolders and
@@ -31,7 +28,7 @@ from transformers.models.esmfold2.modeling_esmfold2 import ESMFold2Model
 # ---------------------------------------------------------------------
 
 NUM_SEEDS = 5              # independent seeds per pair
-NUM_DIFFUSION_SAMPLES = 5  # samples generated per seed
+NUM_DIFFUSION_SAMPLES = 1  # samples generated per seed
 NUM_LOOPS = 20
 NUM_SAMPLING_STEPS = 100
 
@@ -50,7 +47,7 @@ os.makedirs(PL_OUTPUT_DIR, exist_ok=True)
 
 import csv as _csv  # aliased to avoid clashing with the csv import used later
 
-CSV_PATH = "/mnt/scratch/input_csv.csv"  # update to your actual combined CSV path
+CSV_PATH = "/mnt/scratch/input_csv.csv"  # update to your CSV path
 
 ENTRIES = []  # list of (interaction_id, type, seq_1, seq_2)
 with open(CSV_PATH, newline="") as f:
