@@ -11,7 +11,7 @@ module purge
 module load Miniforge3
 module load CUDA/12.9.1
 conda activate esmfold2
-export HF_HOME=/mnt/scratch/$USER/ef2/hf_cache
+export HF_HOME=/mnt/research/woldring_lab/esmfold2/hf_cache
 cd /mnt/scratch/
 
 python3 /mnt/scratch/ppi_batch
