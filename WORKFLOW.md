@@ -4,7 +4,7 @@ Workflow for running [Biohub's ESMFold2](https://github.com/Biohub/esm) — prot
 
 ## 1. Set up a clean conda environment
 
-Connect to a GPU dev-node for setup and testing (do not use a login node — it has no GPU):
+Connect to a GPU dev-node for setup and testing:
 ```bash
 ssh dev-amd20-v100
 ```
